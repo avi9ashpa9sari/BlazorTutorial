@@ -60,7 +60,7 @@ namespace EmployeeManagement.Api.Controllers
                 if (employee != null)
                 {
                     var emp = employeeRepository.GetEmployeeByEmail(employee.Email);
-                    if (emp != null)
+                    if (emp == null)
                     {
                         ModelState.AddModelError("email", "Email is already in use");
                         return BadRequest(ModelState);
